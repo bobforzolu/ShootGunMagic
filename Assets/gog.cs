@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Laurence.Game_utilities
+namespace Laurence
 {
-    public class AbilityState : MonoBehaviour
+    public class gog : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

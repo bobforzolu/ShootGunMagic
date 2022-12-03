@@ -26,11 +26,11 @@ public class WepontController : MonoBehaviour
 
     }
 
-    public void EnterAttack()
+    public void EnterAttackTrigger()
     {
         OnAction?.Invoke();
     }
-    public void LeaveAttack()
+    public void LeaveAttackTrigger()
     {
         Onexit?.Invoke();
     }

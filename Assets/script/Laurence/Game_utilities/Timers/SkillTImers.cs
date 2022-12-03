@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Laurence
+namespace Laurence.Game_utilities
 {
-    public class Idle : MonoBehaviour
+    public class SkillTImers : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

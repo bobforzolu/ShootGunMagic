@@ -13,13 +13,13 @@ public class AttackState : AbilityState
     public override void Enter()
     {
         base.Enter();
-        weapon.EnterAttack();
+        weapon.EnterAttackTrigger();
     }
 
     public override void Exit()
     {
         base.Exit();
-        weapon.LeaveAttack();
+        weapon.LeaveAttackTrigger();
     }
 
     public override void Update()
