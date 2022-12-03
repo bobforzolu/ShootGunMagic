@@ -1,18 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
 
 public class WepontController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Weapon Currentweapon;
+
+    public delegate void SwitchWwapon();
+    public static event  SwitchWwapon OnNewWepon;
+
+    public event Action OnAction;
+    public event Action Onexit;
+    public event Action OnWeponChange;
+
+    public Weapon[] weaponList;
+    public int Weapondirectory = 1;
+
+    private void Start()
     {
-        
+        OnAction += WeaponAction;
+        Onexit += WeaponexitAction;
+        OnWeponChange += ChangeWepon;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnterAttack()
     {
+        OnAction?.Invoke();
+    }
+    public void LeaveAttack()
+    {
+        Onexit?.Invoke();
+    }
+    public void WeaponChangeTrigger()
+    {
+        OnWeponChange?.Invoke();
+    }
+    private void ChangeWepon()
+    {
+       
+
+      
+        Currentweapon = weaponList[Weapondirectory];
+
+        Weapondirectory++;
+        if(Weapondirectory >= weaponList.Length)
+        {
+            Weapondirectory = 0;
+        }
         
     }
+    private void WeaponAction()
+    {
+        Currentweapon.Attack();
+    }
+    private void WeaponexitAction()
+    {
+        Currentweapon.ExitAttack();
+    }
+
+
+
+
 }

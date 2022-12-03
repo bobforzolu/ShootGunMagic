@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "attack",
+                    "type": "Button",
+                    "id": "590fc580-572b-4b79-a798-cc175e4c1fab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -30,11 +39,22 @@
                 {
                     "name": "",
                     "id": "34d1642f-a7d3-4c56-ba02-0cd3744650c1",
-                    "path": "",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "keyboard",
+                    "groups": "gamecontrols",
                     "action": "Change weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ae28443-cac0-4deb-807b-541482f022e4",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamecontrols",
+                    "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
