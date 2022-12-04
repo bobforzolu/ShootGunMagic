@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Laurence.Game_utilities
 {
-    public class Movement : GroundedMovement
+    public class PlayerMovement : GroundedState
     {
         protected override void Enter()
         {

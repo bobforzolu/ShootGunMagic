@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Laurence.Game_utilities
 {
-    public class GroundedMovement : BaseState
+    public class GroundedState : BaseState
     {
        
     }
