@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eed36126e7f0947b5b40abdb0f2c65, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  movementvelocity: 10
+  Maxhealth: 0
+  currentHealth: 0
+  movementvelocity: 5
   JumpForce: 10
   GroundCheck_Radius: 0.4
   ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   variablesJumpHeight: 0.4
+  FacingDirection: 1

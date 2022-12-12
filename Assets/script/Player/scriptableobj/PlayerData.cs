@@ -7,6 +7,9 @@ namespace Laurence
     [CreateAssetMenu(fileName = "PlayerData", menuName ="data/Player Data")]
     public class PlayerData : ScriptableObject
     {
+        [Header("health")]
+        public int Maxhealth;
+        public int currentHealth;
         [Header("Movestate")]
         public float movementvelocity = 10f;
 
@@ -19,5 +22,7 @@ namespace Laurence
 
         [Header("in Air State ")]
         public float variablesJumpHeight = 0.4f;
+
+        public int FacingDirection;
     }
 }

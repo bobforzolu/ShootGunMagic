@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using UnityEditor;
+
+namespace Laurence.script
+{
+    [CreateAssetMenu(fileName ="blasterEventHandler",menuName = "Events/blaster event Handler")]
+    public class GunEventHandler : ScriptableObject
+    {
+        public Action onAmmoSwithchLeft;
+        public void AmmoSwitchTriggerLeft()
+        {
+            onAmmoSwithchLeft?.Invoke();
+        }
+
+        public Action onAmmoSwithchRight;
+        public void AmmoSwitchTriggerRight()
+        {
+            onAmmoSwithchRight?.Invoke();
+        }
+
+        public Action OnShootTrigger;
+        public void ShootTrigger()
+        {
+            OnShootTrigger?.Invoke();
+        }
+
+        public Action OnHitTrigger;
+        public void HitTrigger()
+        {
+            OnShootTrigger?.Invoke();
+        }
+
+        public Action<int> OnAmmoUiUpdate;
+        public void UiUpaadtetrigger(int index )
+        {
+            OnAmmoUiUpdate?.Invoke(index);
+        }
+    }
+}

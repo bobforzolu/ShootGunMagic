@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/ui/playerui.uss?fileID=7433441132597879392&amp;guid=0c1a65bfc330e4547926f3debe5059b6&amp;type=3#playerui" />
+    <ui:ProgressBar high-value="12" name="health" class="ds" style="left: 2px; bottom: auto; top: 11px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; height: 30px;" />
+    <ui:VisualElement style="flex-direction: row; width: 110px; height: 100px; position: absolute; top: 50px;">
+        <ui:VisualElement name="VisualElement" style="width: 100%; height: 100px; flex-direction: column; position: relative; top: auto; left: auto; background-color: rgba(255, 255, 255, 0);">
+            <ui:VisualElement name="blaster" style="width: 100%; height: 33%; background-color: rgb(255, 255, 255); flex-direction: row; margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-image: none; transition-property: background-color;">
+                <ui:VisualElement name="blasterImage" style="width: 75%; height: 100%; -unity-text-outline-color: rgb(0, 158, 255); background-color: rgba(255, 255, 255, 0.18); background-image: url(&apos;project://database/Assets/ui/blaster.png?fileID=946330864&amp;guid=3806200204823db4c854ce1576738fd8&amp;type=3#bladter icon&apos;); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+                <ui:VisualElement name="ammocount" style="width: 25%; height: 100%; background-color: rgba(255, 0, 38, 0); margin-left: 5px;">
+                    <ui:Label text="10" display-tooltip-when-elided="true" name="Bamount" style="color: rgb(0, 0, 0); height: 100%; -unity-text-align: middle-center; -unity-font-style: bold; font-size: 14px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: rgba(255, 255, 255, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="shotgun" style="height: 33%; width: 100%; background-color: rgb(255, 255, 255); flex-direction: row; margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                <ui:VisualElement name="blasterImage" style="width: 75%; height: 100%; -unity-text-outline-color: rgb(0, 158, 255); background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/ui/Flame_purple_SpriteSheet.png?fileID=1819605619&amp;guid=633cfaeb8bb503e41b0b12e02d865fd3&amp;type=3#Flame_purple_SpriteSheet_0&apos;);" />
+                <ui:VisualElement name="ammocount" style="width: 25%; height: 100%; background-color: rgba(255, 0, 0, 0);">
+                    <ui:Label text="10" display-tooltip-when-elided="true" name="Samount" style="color: rgb(0, 0, 0); height: 100%; -unity-text-align: middle-center; font-size: 15px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="flame" style="width: 100%; height: 33%; background-color: rgb(255, 255, 255); flex-direction: row; margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                <ui:VisualElement name="blasterImage" style="width: 75%; height: 100%; -unity-text-outline-color: rgb(0, 158, 255); background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/ui/muzzle_shotgun_purple_SpriteSheet.png?fileID=545146563&amp;guid=85e5718823f7c6244831986e2a3a246b&amp;type=3#muzzle_shotgun_purple_SpriteSheet_1&apos;);" />
+                <ui:VisualElement name="ammocount" style="width: 25%; height: 100%; background-color: rgba(255, 0, 0, 0);">
+                    <ui:Label text="10" display-tooltip-when-elided="true" name="Famount" style="color: rgb(0, 0, 0); height: 100%; -unity-text-align: middle-center; font-size: 15px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

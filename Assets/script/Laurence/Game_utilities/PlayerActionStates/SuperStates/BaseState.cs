@@ -10,15 +10,19 @@ namespace Laurence.Game_utilities
         {
         }
 
-        protected virtual void Enter()
+        public virtual void Enter()
         {
 
         }
-        protected virtual void Update()
+        public virtual void Update()
         {
 
         }
-        protected virtual void Exit()
+        public virtual void FixedUpdate()
+        {
+
+        }
+        public virtual void Exit()
         {
 
         }

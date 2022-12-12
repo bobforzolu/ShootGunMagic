@@ -25,7 +25,12 @@ public class IdleState : Grounded
     {
         base.Update();
        
+
         
-        
+        if(Xinput != 0)
+        {
+            statemachine.CangeState(controller.WalkState);
+
+        }
     }
 }

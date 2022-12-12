@@ -1,0 +1,28 @@
+.ds {
+    width: 162px;
+    height: 19px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    -unity-text-outline-color: rgb(255, 0, 0);
+    font-size: 30px;
+    -unity-text-align: upper-center;
+    position: absolute;
+    top: auto;
+    left: 8px;
+    bottom: 444px;
+    right: auto;
+}
+
+.ds .unity-progress-bar__progress {
+    background-color: red;
+}
+
+.ds .unity-progress-bar__container {
+    height: 400px;
+}
+
+.ds .unity-progress-bar__background {
+    height: 400px
+}

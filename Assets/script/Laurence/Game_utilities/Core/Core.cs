@@ -24,6 +24,7 @@ namespace Laurence.Game_utilities.Core
         public void LogicUpdate()
         {
             movement.LogicUpdate();
+            collison_Sense.logicUpdate();
         }
         public void PhysicsUpdate()
         {

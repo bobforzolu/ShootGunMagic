@@ -19,11 +19,15 @@ public abstract class  State
 
     }
     public virtual void Update() {
-        Debug.Log("hi");
+        controller.PlayerStats.FacingDirection = controller.core.movement.facingDirections;
     }
 
     public virtual void AbilityFinish()
     {
+    }
+    public virtual void AnimationEventTrigger()
+    {
+
     }
 
 }

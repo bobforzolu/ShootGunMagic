@@ -25,6 +25,8 @@ public class AttackState : AbilityState
     public override void Update()
     {
         base.Update();
+        controller.core.movement.SetVelocityX(0);
         
     }
+   
 }

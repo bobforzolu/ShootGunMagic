@@ -25,6 +25,7 @@ namespace Laurence.script.Player
         public override void Update()
         {
             base.Update();
+            controller.core.movement.SetVelocityX(0);
             
         }
 

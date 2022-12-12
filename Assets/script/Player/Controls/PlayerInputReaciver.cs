@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInputReaciver : MonoBehaviour
@@ -12,9 +13,11 @@ public class PlayerInputReaciver : MonoBehaviour
     public int normInputX { get; private set; }
 
     public int normInputY { get; private set; }
+    public bool ReasourceChange { get; private set; }
 
 
-    public void OnSwitchPressed(InputAction.CallbackContext context)
+
+    public void OnWeponSwitchPressed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -22,6 +25,17 @@ public class PlayerInputReaciver : MonoBehaviour
         }else if (context.canceled)
         {
             isSwitch = false;
+        }
+    }
+    public void OnWeaponSkillChange(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            ReasourceChange = true;
+        }
+        else if (context.canceled)
+        {
+            ReasourceChange = false;
         }
     }
     public void OnAttackPressed(InputAction.CallbackContext context)
@@ -47,6 +61,13 @@ public class PlayerInputReaciver : MonoBehaviour
 
 
 
-
+    public void OnRessorcePressed()
+    {
+        ReasourceChange = false;
+    }
+    public void OnAttackPressed()
+    {
+        isAttack = false;
+    }
 
 }
