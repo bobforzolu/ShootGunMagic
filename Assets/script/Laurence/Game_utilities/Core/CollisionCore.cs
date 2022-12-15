@@ -23,8 +23,7 @@ namespace Laurence.Game_utilities.Core
         }
         public void logicUpdate()
         {
-            FindWall();
-            FindLedge();
+        
         }
 
         public bool GroundCheck()
@@ -32,27 +31,6 @@ namespace Laurence.Game_utilities.Core
             
             return Physics2D.OverlapCircle(GroudCheckPosition.position, playerData.GroundCheck_Radius, playerData.ground);
         }
-        public bool FindLedge()
-        {
-            return Physics2D.Raycast(detectledge.transform.position, Vector2.down, enemyData.detectledge, enemyData.layerMask);
-        }
-        public bool FindWall()
-        {
-            
-            return  Physics2D.Raycast(detectledge.transform.position, Vector2.right, enemyData.detectwall, enemyData.layerMask);
-        }
-        
-
-
-        public void OnDrawGizmos()
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawRay(detectledge.transform.position, Vector2.down * enemyData.detectledge);
-            Gizmos.DrawRay(detectwall.transform.position, Vector2.right * enemyData.detectwall);
-            
-
-            Gizmos.DrawWireSphere(GroudCheckPosition.position, playerData.GroundCheck_Radius);
-          
-        }
+       
     }
 }

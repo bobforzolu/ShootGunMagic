@@ -35,5 +35,14 @@ namespace Laurence
 
 
         }
+        protected int playerfacingdir(Vector2 me, Vector2 them)
+        {
+            if (me.x < them.x)
+            {
+                return 1;
+            }
+            else
+                return -1;
+        }
     }
 }

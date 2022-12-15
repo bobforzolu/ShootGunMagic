@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Close_Range_EN
   m_EditorClassIdentifier: 
   health: 10
-  attackLongRange: 0
-  attackCloseRange: 0
-  speed: 2
+  Attackrange: 2
+  speed: 11.1
+  attackSpeed: 5
   detectledge: 2
   detectwall: 2.23
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  waitTime: 0.5
+  waitTime: 2

@@ -10,9 +10,9 @@ namespace Laurence
     {
         [Header("Stats")]
         public int health;
-        public float attackLongRange;
-        public float attackCloseRange;
+        public float Attackrange;
         public float speed;
+        public float attackSpeed;
 
         [Header("patrol")]
         public float detectledge;

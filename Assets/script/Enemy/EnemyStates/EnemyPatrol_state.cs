@@ -2,6 +2,7 @@ using Laurence.Game_utilities;
 using Laurence.Game_utilities.Core;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Laurence
@@ -11,7 +12,10 @@ namespace Laurence
         public int _CurrentWaypoint;
         public bool _Waiting;
         public float startwaittime;
-        
+        public bool EnemyFound;
+        public bool canFlip;
+        private float currentRotation;
+
         public EnemyPatrol_state(EnemyData Data, Statemachine statemachine, EnemyController controller) : base(Data, statemachine, controller)
         {
         }
@@ -19,6 +23,9 @@ namespace Laurence
         public override void Enter()
         {
             base.Enter();
+            controller.sprite.color = Color.green;
+            controller.animator.SetBool("run", true);
+
         }
 
         public override void Exit()
@@ -34,6 +41,7 @@ namespace Laurence
         public override void Update()
         {
             base.Update();
+            
             if (_Waiting)
             {
                 if (Time.time <= startwaittime + data.waitTime)
@@ -43,13 +51,18 @@ namespace Laurence
                 
                         
              }
+            
+            canFlip = true;
 
             Transform wp = controller.PatrolPoint[_CurrentWaypoint];
-            Debug.Log(wp);
-            if(Vector2.Distance(controller.transform.position, wp.position) < 0.11f)
+            
+            if(Vector2.Distance(controller.transform.position, wp.position) < 0.21f)
             {
-               
-                
+                controller.animator.SetBool("run", false);
+
+                controller.animator.SetBool("idle", true);
+
+                canFlip = true;
                 controller.transform.position = wp.position;
                 startwaittime = Time.time;
                 _Waiting = true;
@@ -57,7 +70,21 @@ namespace Laurence
             }
             else
             {
-                controller.transform.position = Vector3.MoveTowards(controller.transform.position, wp.position, data.speed * Time.deltaTime);
+                controller.animator.SetBool("idle", false);
+                controller.animator.SetBool("run", true);
+
+                controller.rb.MovePosition (  Vector3.MoveTowards(controller.transform.position, wp.position, data.speed * Time.deltaTime));
+
+                controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, wp.position));
+
+
+
+
+            }
+
+            if (EnemyFound)
+            {
+                statemachine.CangeState(controller.patrol_Attack);
             }
                 
         }
