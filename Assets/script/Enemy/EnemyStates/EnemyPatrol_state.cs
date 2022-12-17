@@ -23,7 +23,6 @@ namespace Laurence
         public override void Enter()
         {
             base.Enter();
-            controller.sprite.color = Color.green;
             controller.animator.SetBool("run", true);
 
         }
@@ -55,11 +54,19 @@ namespace Laurence
             canFlip = true;
 
             Transform wp = controller.PatrolPoint[_CurrentWaypoint];
-            
-            if(Vector2.Distance(controller.transform.position, wp.position) < 0.21f)
+            if(EnemyFound)
             {
-                controller.animator.SetBool("run", false);
 
+                wp = controller.Playerlocation;
+            }
+            if(Vector2.Distance(controller.transform.position, wp.position) <= data.Attackrange && EnemyFound)
+            {
+                statemachine.CangeState(controller.patrol_Attack);
+            }
+             if(Vector2.Distance(controller.transform.position, wp.position) < 0.21f)
+            {
+
+                controller.animator.SetBool("run", false);
                 controller.animator.SetBool("idle", true);
 
                 canFlip = true;
@@ -70,9 +77,9 @@ namespace Laurence
             }
             else
             {
+
                 controller.animator.SetBool("idle", false);
                 controller.animator.SetBool("run", true);
-
                 controller.rb.MovePosition (  Vector3.MoveTowards(controller.transform.position, wp.position, data.speed * Time.deltaTime));
 
                 controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, wp.position));
@@ -82,10 +89,7 @@ namespace Laurence
 
             }
 
-            if (EnemyFound)
-            {
-                statemachine.CangeState(controller.patrol_Attack);
-            }
+           
                 
         }
     }

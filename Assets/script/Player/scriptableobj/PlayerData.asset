@@ -21,4 +21,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   variablesJumpHeight: 0.4
-  FacingDirection: 1
+  FacingDirection: -1
+  damage2: 4
+  damage1: 2

@@ -24,5 +24,10 @@ namespace Laurence
         public float variablesJumpHeight = 0.4f;
 
         public int FacingDirection;
+
+        [Header("attack")]
+        public int damage2 = 5;
+        public int damage1 = 3;
+
     }
 }

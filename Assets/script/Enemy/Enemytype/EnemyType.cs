@@ -6,14 +6,24 @@ namespace Laurence.Game_utilities.Enemy
 {
     public abstract class EnemyType : MonoBehaviour,IDamagable
     {
-        private  int health;
+        [SerializeField]public  int health;
 
-        protected EnemyType(int health)
+        public virtual void start()
         {
-            this.health = health;
+
         }
 
-        public virtual void TakeDamage(float Damage)
+        public virtual void TakeDamage(int Damage)
+        {
+            health -= Damage;
+            if(health <= 0)
+            {
+                OnDeath();
+            }
+
+        }
+
+        public virtual void OnDeath()
         {
 
         }

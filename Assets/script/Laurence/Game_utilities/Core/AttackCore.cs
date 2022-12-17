@@ -8,14 +8,15 @@ namespace Laurence
 {
     public class AttackCore : CoreComponent
     {
-        public List<IDamagable> DamageEnemy;
+        public List<IDamagable> DamageEnemy = new List<IDamagable>();
         protected override void Awake()
         {
             base.Awake();
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            AddDectetedEnemy(collision);
+            if(collision.CompareTag("Enemy"))
+                AddDectetedEnemy(collision);
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
@@ -23,7 +24,8 @@ namespace Laurence
         }
         public void AddDectetedEnemy(Collider2D target)
         {
-            IDamagable[] enemys = target.GetComponents<IDamagable>();
+            IDamagable[] enemys = target.GetComponentsInChildren<IDamagable>();
+            Debug.Log(enemys);
             foreach (IDamagable enemy in enemys)
             {
                 DamageEnemy.Add(enemy);
@@ -40,7 +42,7 @@ namespace Laurence
 
 
         }
-        public void Damage(float damage)
+        public void Damage(int damage)
         {
             for (int i = 0; i < DamageEnemy.Count; i++)
             {

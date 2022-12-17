@@ -10,9 +10,9 @@ namespace Laurence
 
         public bool EnemyFound;
         public float attackTime;
-        public float count;
-        public bool isattacking;
-
+        public float patroltime;
+        public bool _CanAttack;
+        public bool Isattacking;
 
 
         public EnemyAttack_State(EnemyData data, Statemachine statemachine, EnemyController controller) : base(data, statemachine, controller)
@@ -23,13 +23,13 @@ namespace Laurence
         public override void AnimationFinishTrigger()
         {
             base.AnimationFinishTrigger();
+            Isattacking = false;
         }
 
         public override void Enter()
         {
             base.Enter();
 
-                attackTime = Time.time;
         }
 
         public override void Exit()
@@ -45,63 +45,58 @@ namespace Laurence
         public override void Update()
         {
             base.Update();
-
-            Transform player = controller.Playerlocation;
-            if(Vector2.Distance(controller.transform.position, player.position) >= data.Attackrange)
-            {
-                if (!isattacking)
-                {
-                    controller.rb.MovePosition( Vector2.MoveTowards(controller.transform.position, player.position, data.speed *Time.deltaTime));
-                    controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, player.position));
-                    controller.animator.SetBool("attack", false);
-                    controller.animator.SetBool("idle", false);
-
-                    controller.animator.SetBool("run", true);
-
-                }
-            }
-            else{
-                // attack
-                if (counter() <= 0)
-                {
-                    controller.animator.SetBool("run", false);
-                    controller.animator.SetBool("idle", false);
-
-                    controller.animator.SetBool("attack", true);
-                   
-                    count = 3;
-
-                }
-                else
-                {
-                    isattacking = false;
-                    controller.sprite.color = Color.white;
-
-                    attackTime = Time.time;
-                    controller.animator.SetBool("attack", false);
-                    controller.animator.SetBool("run", false);
-
-                    controller.animator.SetBool("idle", true);
-                    if(count < 0.7f)
-                    isattacking = true;
-                        controller.sprite.color = Color.red;
-
-                }
-            }
             if (!EnemyFound)
+            {
+                controller.animator.SetBool("run", false);
+                controller.animator.SetBool("attack", false);
+                controller.animator.SetBool("idle", true);
+
+            }
+            if (!EnemyFound && canPatrol())
             {
                 statemachine.CangeState(controller.patrol_State);
             }
-        }
 
-        public float counter()
+            Transform player = controller.Playerlocation;
+            controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, player.position));
+            if (Vector2.Distance(controller.transform.position, player.position) <= data.Attackrange && Canattack())
+            {
+                Isattacking = true;
+                attackTime = Time.time;
+                controller.animator.SetBool("run", false);
+                controller.animator.SetBool("idle", false);
+                controller.animator.SetBool("attack", true);
+
+            }else if (Vector2.Distance(controller.transform.position, player.position) <= data.Attackrange && !Canattack() && !Isattacking)
+            {
+                patroltime = Time.time;
+                controller.animator.SetBool("run", false);
+                controller.animator.SetBool("attack", false);
+                controller.animator.SetBool("idle", true);
+            }
+            else if(canPatrol() && !Isattacking )
+            {
+                controller.animator.SetBool("attack", false);
+
+                controller.animator.SetBool("run", false);
+                controller.animator.SetBool("idle", true);
+                statemachine.CangeState(controller.patrol_State);
+            }
+            
+
+
+        }
+        public bool Canattack()
         {
-            count -= Time.deltaTime * 1;
-
-            return count;
-
-
+            return Time.time >= attackTime + data.attackSpeed;
         }
+        public bool canPatrol()
+        {
+            return Time.time >= patroltime + 1.5f;
+        }
+      
+
+      
      
        
     }

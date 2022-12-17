@@ -19,6 +19,8 @@ namespace Laurence
 
         public EnemyPatrol_state patrol_State { get; private set; }
         public EnemyAttack_State patrol_Attack { get; private set; }
+        public Enemy_Idle _Enemy_idle { get; private set; }
+
 
 
         public Transform[] PatrolPoint;
@@ -28,6 +30,7 @@ namespace Laurence
             statemachine = new Statemachine();
             patrol_State = new EnemyPatrol_state(data, statemachine, this );
             patrol_Attack = new EnemyAttack_State(data, statemachine, this);
+            _Enemy_idle = new Enemy_Idle(data, statemachine, this);
 
             transform.parent.GetComponentInParent<Playerdetection>().OnPlayerFound += PlayerEnterAttackRange;
 
@@ -70,5 +73,6 @@ namespace Laurence
             }
               
         }
+        public void Isattacking() => patrol_Attack.AnimationFinishTrigger();
     }
 }

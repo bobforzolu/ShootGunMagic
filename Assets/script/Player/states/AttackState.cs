@@ -28,5 +28,16 @@ public class AttackState : AbilityState
         controller.core.movement.SetVelocityX(0);
         
     }
-   
+
+    public override void AnimationEventTrigger()
+    {
+        base.AnimationEventTrigger();
+        controller.core.attack.Damage(damage());
+    }
+    public int damage()
+    {
+        int random = Random.Range(controller.PlayerStats.damage1, controller.PlayerStats.damage2);
+        int value = random;
+        return value;
+    }
 }

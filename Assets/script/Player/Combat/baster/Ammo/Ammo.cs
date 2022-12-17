@@ -34,6 +34,7 @@ namespace Laurence
             if (collision.CompareTag("Enemy"))
             {
                 Instantiate(ammoType.AmmoHitEffect, collision.transform.position, Quaternion.identity);
+                collision.GetComponentInChildren<EnemyHealth>().TakeDamage(ammoType.Damage);
             }
             if(Onhitime <= 0)
             {

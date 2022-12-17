@@ -6,7 +6,7 @@ namespace Laurence
 {
     public interface IDamagable 
     {
-        public void TakeDamage(float Damage);
+        public void TakeDamage(int Damage);
       
     }
 }

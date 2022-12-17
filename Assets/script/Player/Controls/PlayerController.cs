@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     }
     public void AnimationActionTrigger()
     {
+        statemachine.CurrentState.AnimationEventTrigger();
     }
 
 
