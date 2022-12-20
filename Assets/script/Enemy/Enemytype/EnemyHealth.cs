@@ -8,26 +8,27 @@ namespace Laurence
     public class EnemyHealth : MonoBehaviour, IDamagable
     {
         public EnemyData enemyData;
-        [SerializeField] public int health;
 
         private void Start()
         {
-            health = enemyData.health;
+            enemyData.health = enemyData.maxhealth;
         }
 
         public void TakeDamage(int Damage)
         {
-            if (health < 0)
-                return;
-            health -= Damage;
-            if (health <= 0)
+           
+            enemyData.health -= Damage;
+            if (enemyData.health <= 0)
             {
                 OnDeath();
             }
         }
         public  void OnDeath()
         {
-            Destroy(transform.parent.gameObject, 0.1f);
+            if(transform.parent == null)
+                Destroy(gameObject, 0.1f);
+            else
+                 Destroy(transform.parent.gameObject, 0.1f);
         }
     }
 }

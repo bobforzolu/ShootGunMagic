@@ -9,7 +9,8 @@ namespace Laurence
     public class EnemyData : ScriptableObject
     {
         [Header("Stats")]
-        public int health;
+        public float health;
+        public float maxhealth;
         public float Attackrange;
         public float speed;
         public float attackSpeed;

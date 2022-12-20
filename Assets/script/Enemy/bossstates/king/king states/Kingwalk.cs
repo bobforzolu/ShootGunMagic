@@ -19,19 +19,27 @@ namespace Laurence
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if(king.distanceToTarger > king.range)
+            if (king.phase1)
             {
-                core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector3(animator.transform.position.x, animator.transform.position.y), king.Traget2 , king.speed * Time.deltaTime));
+                if(king.distanceToTarger > king.range)
+                {
+                    core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector3(animator.transform.position.x, animator.transform.position.y), king.Playerpos , king.speed * Time.deltaTime));
 
-            }else if(king.distanceToTarger <= king.range && king.Energy <= 5)
+                }else if(king.distanceToTarger <= king.range && king.Energy <= 5)
+                {
+                    animator.SetTrigger("attack1");
+
+                }
+
+                else if(Time.time >= walkTime + king.walkDuration)
+                {
+                    animator.SetTrigger("idle");
+                }
+
+            }else if (king.phase2)
             {
-                animator.SetTrigger("attack1");
 
-            }
 
-            else if(Time.time >= walkTime + king.walkDuration)
-            {
-                animator.SetTrigger("idle");
             }
         }
 

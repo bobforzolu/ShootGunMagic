@@ -31,7 +31,7 @@ namespace Laurence
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Debug.Log("Ammotyp");
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("King"))
             {
                 Instantiate(ammoType.AmmoHitEffect, collision.transform.position, Quaternion.identity);
                 collision.GetComponentInChildren<EnemyHealth>().TakeDamage(ammoType.Damage);

@@ -6,29 +6,52 @@ namespace Laurence
 {
     public class kingTeleport : StateMachineBehaviour
     {
-        //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    
-        //}
+        public Kingscriptableobject king;
+        private Rigidbody2D Rb2d;
+        public int i;
+        
+        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            king.OnTeleport += TeleportLocation;
+            Rb2d = animator.GetComponent<Rigidbody2D>();
+            king.AnimationDone = false;
+        }
 
-        //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    
-        //}
+        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            if(i == 1 && king.AnimationDone)
+            {
+                animator.SetTrigger("slam");
+            }
+        }
 
-        //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    
-        //}
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            
+        }
+        public void TeleportLocation()
+        {
+            if(i == 0)
+            {
 
-        //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    // Implement code that processes and affects root motion
-        //}
+                Rb2d.transform.position = king.Playerpos;
+                
+            }
+            else if(i ==1)
+            {
+                Rb2d.transform.position = king.restlocation[0];
 
-        //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    // Implement code that sets up animation IK (inverse kinematics)
-        //}
+            }
+            else if(i == 2)
+            {
+                Rb2d.transform.position = king.restlocation[1];
+
+            }
+            i++;
+            if (i >= 3)
+                i = 0;
+        }
+
+       
     }
 }

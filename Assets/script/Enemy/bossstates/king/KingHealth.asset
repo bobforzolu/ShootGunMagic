@@ -9,18 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eed36126e7f0947b5b40abdb0f2c65, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: c6ce29fb7f7e4cb46b59b83046c551c3, type: 3}
+  m_Name: KingHealth
   m_EditorClassIdentifier: 
-  Maxhealth: 25
-  currentHealth: 0
-  movementvelocity: 7
-  JumpForce: 10
-  GroundCheck_Radius: 0.4
-  ground:
+  health: 63
+  maxhealth: 100
+  Attackrange: 0
+  speed: 0
+  attackSpeed: 0
+  detectledge: 0
+  detectwall: 0
+  layerMask:
     serializedVersion: 2
-    m_Bits: 64
-  variablesJumpHeight: 0.4
-  FacingDirection: 1
-  damage2: 4
-  damage1: 2
+    m_Bits: 0
+  waitTime: 1

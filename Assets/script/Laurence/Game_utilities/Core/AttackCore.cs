@@ -15,7 +15,7 @@ namespace Laurence
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("Enemy"))
+            if(collision.CompareTag("Enemy") || collision.CompareTag("King"))
                 AddDectetedEnemy(collision);
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -25,9 +25,9 @@ namespace Laurence
         public void AddDectetedEnemy(Collider2D target)
         {
             IDamagable[] enemys = target.GetComponentsInChildren<IDamagable>();
-            Debug.Log(enemys);
             foreach (IDamagable enemy in enemys)
             {
+                Debug.Log(enemy);
                 DamageEnemy.Add(enemy);
             }
         }

@@ -17,13 +17,17 @@ MonoBehaviour:
   walkDuration: 1
   relaxtime: 1
   range: 3
-  AnimationDone: 1
-  distanceToTarger: 7.4111915
+  AnimationDone: 0
+  distanceToTarger: 7.5313354
   CanFlip: 1
   speed: 5
-  Traget1: {x: 115.52004, y: -4.402473}
-  Traget2: {x: 122.87422, y: -3.4849727}
+  Kingpos: {x: -4.157631, y: -3.4024959}
+  Playerpos: {x: 3.3176086, y: -2.4849982}
   hit1movespeed: 3
   hit2movespeed: 2.5
   restpoint: 0
-  restlocation: []
+  restlocation:
+  - {x: -14.61, y: -2.93}
+  - {x: 12.64, y: -2.93}
+  phase1: 1
+  phase2: 0
