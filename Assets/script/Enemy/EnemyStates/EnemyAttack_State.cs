@@ -58,7 +58,7 @@ namespace Laurence
             }
 
             Transform player = controller.Playerlocation;
-            controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, player.position));
+            controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, player.position),true);
             if (Vector2.Distance(controller.transform.position, player.position) <= data.Attackrange && Canattack())
             {
                 Isattacking = true;

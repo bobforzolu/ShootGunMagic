@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6635042951626042921}
-  - component: {fileID: 6635042951626042922}
   - component: {fileID: 6635042951626042923}
   - component: {fileID: 6635042951626042920}
   - component: {fileID: 6635042951626042917}
@@ -36,19 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6635042951626042922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6635042951626042926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3948667981651994791b4c0dce388ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0f2f3a65d2c35144ea9f7ec10ddd87b7, type: 2}
 --- !u!114 &6635042951626042923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +149,7 @@ GameObject:
   - component: {fileID: 8823446202992479561}
   m_Layer: 7
   m_Name: bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3948667981651994791b4c0dce388ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: 63108487d0ae2d9449fa7f66ebb82328, type: 2}
+  health: 0
 --- !u!1 &6635042952911270394
 GameObject:
   m_ObjectHideFlags: 0

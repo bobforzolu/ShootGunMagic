@@ -49,8 +49,10 @@ namespace Laurence.Game_utilities.Core
             RB.velocity = workplace;
             CurrentVelocity = workplace;
         }
-        public Vector3 CheckIfShouldFlip(int XInput)
+        public Vector3 CheckIfShouldFlip(int XInput, bool canFlip)
         {
+            if (!canFlip)
+                return new Vector3(0, 0, 0);
             if (XInput != 0 && XInput != facingDirections)
             {
                 return Flip();

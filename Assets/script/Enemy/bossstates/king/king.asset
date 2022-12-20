@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e6501895912f3479f2a523014f1f9c, type: 3}
+  m_Name: king
+  m_EditorClassIdentifier: 
+  Energy: 3
+  MaxEnergy: 5
+  walkDuration: 1
+  relaxtime: 1
+  range: 3
+  AnimationDone: 0
+  distanceToTarger: 5.1070604
+  CanFlip: 1
+  speed: 5
+  Traget1: {x: 137.49927, y: -4.4024553}
+  Traget2: {x: 142.52322, y: -3.4848888}
+  hit1movespeed: 3
+  hit2movespeed: 3
+  restpoint: 0
+  restlocation: []

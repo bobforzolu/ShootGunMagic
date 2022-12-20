@@ -17,6 +17,8 @@ namespace Laurence
 
         public void TakeDamage(int Damage)
         {
+            if (health < 0)
+                return;
             health -= Damage;
             if (health <= 0)
             {

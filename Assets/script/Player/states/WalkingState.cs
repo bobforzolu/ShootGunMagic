@@ -34,7 +34,7 @@ namespace Laurence
         public override void Update()
         {
             base.Update();
-            controller.core.movement.CheckIfShouldFlip(Xinput);
+            controller.core.movement.CheckIfShouldFlip(Xinput,true);
 
             controller.core.movement.SetVelocityX(Xinput * controller.PlayerStats.movementvelocity);
 

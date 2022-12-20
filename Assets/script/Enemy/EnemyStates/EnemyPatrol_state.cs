@@ -82,7 +82,7 @@ namespace Laurence
                 controller.animator.SetBool("run", true);
                 controller.rb.MovePosition (  Vector3.MoveTowards(controller.transform.position, wp.position, data.speed * Time.deltaTime));
 
-                controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, wp.position));
+                controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, wp.position),true);
 
 
 

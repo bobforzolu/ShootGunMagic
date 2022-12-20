@@ -11,10 +11,8 @@ namespace Laurence.Game_utilities.Core
         public Transform GroudCheckPosition;
         public PlayerData playerData;
 
-        public Transform detectledge;
-        public Transform detectwall;
+       
 
-        public EnemyData enemyData;
 
         protected override void Awake()
         {
