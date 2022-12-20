@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maxhealth: 0
   currentHealth: 0
-  movementvelocity: 5
+  movementvelocity: 7
   JumpForce: 10
   GroundCheck_Radius: 0.4
   ground:
     serializedVersion: 2
     m_Bits: 64
   variablesJumpHeight: 0.4
-  FacingDirection: -1
+  FacingDirection: 1
   damage2: 4
   damage1: 2

@@ -21,7 +21,7 @@ namespace Laurence
         {
             if(king.distanceToTarger > king.range)
             {
-                core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector2(king.Traget1.x, animator.transform.position.y), king.Traget2 , king.speed * Time.deltaTime));
+                core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector3(animator.transform.position.x, animator.transform.position.y), king.Traget2 , king.speed * Time.deltaTime));
 
             }else if(king.distanceToTarger <= king.range && king.Energy <= 5)
             {

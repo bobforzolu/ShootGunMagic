@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e6501895912f3479f2a523014f1f9c, type: 3}
   m_Name: king
   m_EditorClassIdentifier: 
-  Energy: 3
+  Energy: 2
   MaxEnergy: 5
   walkDuration: 1
   relaxtime: 1
   range: 3
-  AnimationDone: 0
-  distanceToTarger: 5.1070604
+  AnimationDone: 1
+  distanceToTarger: 7.4111915
   CanFlip: 1
   speed: 5
-  Traget1: {x: 137.49927, y: -4.4024553}
-  Traget2: {x: 142.52322, y: -3.4848888}
+  Traget1: {x: 115.52004, y: -4.402473}
+  Traget2: {x: 122.87422, y: -3.4849727}
   hit1movespeed: 3
-  hit2movespeed: 3
+  hit2movespeed: 2.5
   restpoint: 0
   restlocation: []
