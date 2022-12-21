@@ -10,8 +10,12 @@ namespace Laurence
         public Kingscriptableobject king;
         private float walkTime;
         private Core core;
+        public AnimationPatterns patterns;
+
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            patterns = animator.GetComponent<AnimationPatterns>();
+
             core = animator.GetComponentInChildren<Core>();
             king.CanFlip = true;
             walkTime = Time.time;
@@ -39,7 +43,7 @@ namespace Laurence
             }else if (king.phase2)
             {
 
-
+                animator.SetTrigger(patterns.WalkRoulet());
             }
         }
 

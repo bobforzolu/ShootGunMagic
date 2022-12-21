@@ -9,20 +9,33 @@ namespace Laurence
         public Kingscriptableobject king;
         private Rigidbody2D Rb2d;
         public int i;
-        
+        public AnimationPatterns patterns;
+
+
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             king.OnTeleport += TeleportLocation;
             Rb2d = animator.GetComponent<Rigidbody2D>();
             king.AnimationDone = false;
+            patterns = animator.GetComponent<AnimationPatterns>();
+            king.Energy++;
+
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if(i == 1 && king.AnimationDone)
+           
+            
+             if (king.Energy>= king.MaxEnergy && king.AnimationDone)
             {
-                animator.SetTrigger("slam");
+                animator.SetTrigger("idle");
             }
+            else if(king.AnimationDone)
+            {
+                animator.SetTrigger(patterns.teleportRoulet());
+
+            }
+           
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,10 +44,10 @@ namespace Laurence
         }
         public void TeleportLocation()
         {
-            if(i == 0)
+                Rb2d.transform.position = king.Playerpos;
+            /**if(i == 0)
             {
 
-                Rb2d.transform.position = king.Playerpos;
                 
             }
             else if(i ==1)
@@ -49,7 +62,7 @@ namespace Laurence
             }
             i++;
             if (i >= 3)
-                i = 0;
+                i = 0;**/
         }
 
        

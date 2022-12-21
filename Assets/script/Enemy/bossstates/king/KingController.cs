@@ -40,6 +40,8 @@ namespace Laurence
             Debug.Log(HealthPercent());
             if(HealthPercent() >= 0.6)
             {
+                kingdata.phase2 = false;
+
                 kingdata.phase1 = true;
             }else if(HealthPercent() <= 0.59)
             {

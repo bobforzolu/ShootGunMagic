@@ -7,12 +7,14 @@ namespace Laurence
     public class KingIdle : StateMachineBehaviour
     {
         public Kingscriptableobject king;
+        public AnimationPatterns patterns;
         private float idleTime;
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             idleTime = Time.time;
             king.CanFlip = true;
+            patterns = animator.GetComponent<AnimationPatterns>();
             if(king.Energy >= king.MaxEnergy)
             {
                 king.Energy = 0;
@@ -35,7 +37,7 @@ namespace Laurence
                  }
             }else if (king.phase2)
             {
-
+                animator.SetTrigger(patterns.IdleRoulet());   
             }
            
         }
