@@ -45,6 +45,8 @@ namespace Laurence
                 kingdata.phase1 = true;
             }else if(HealthPercent() <= 0.59)
             {
+                kingdata.hit1movespeed = kingdata.phase1attkspeed;
+                kingdata.hit2movespeed = kingdata.phase2attkspeed;
                 kingdata.phase1 = false;
                 kingdata.phase2 = true;
                 Phase2();

@@ -12,22 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e6501895912f3479f2a523014f1f9c, type: 3}
   m_Name: king
   m_EditorClassIdentifier: 
-  Energy: 2
+  Energy: 3
   MaxEnergy: 5
   walkDuration: 1
   relaxtime: 1
-  range: 3
+  range: 4
   AnimationDone: 0
-  distanceToTarger: 7.5313354
-  CanFlip: 1
-  speed: 5
-  Kingpos: {x: -4.157631, y: -3.4024959}
-  Playerpos: {x: 3.3176086, y: -2.4849982}
-  hit1movespeed: 3
-  hit2movespeed: 2.5
+  distanceToTarger: 0.917495
+  CanFlip: 0
+  speed: 7
+  Kingpos: {x: 7.643482, y: -3.4024892}
+  Playerpos: {x: 7.6434817, y: -2.4849942}
+  hit1movespeed: 7
+  hit2movespeed: 1
   restpoint: 0
   restlocation:
   - {x: -14.61, y: -2.93}
   - {x: 12.64, y: -2.93}
-  phase1: 1
-  phase2: 0
+  phase1: 0
+  phase2: 1
+  phase2attkspeed: 1
+  phase1attkspeed: 7

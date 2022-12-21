@@ -42,8 +42,15 @@ namespace Laurence
 
             }else if (king.phase2)
             {
+                if (king.distanceToTarger > king.range)
+                {
+                    core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector3(animator.transform.position.x, animator.transform.position.y), king.Playerpos, king.speed * Time.deltaTime));
 
-                animator.SetTrigger(patterns.WalkRoulet());
+                }
+                if (Time.time >= walkTime + king.walkDuration)
+                {
+                    animator.SetTrigger(patterns.WalkRoulet());
+                }
             }
         }
 

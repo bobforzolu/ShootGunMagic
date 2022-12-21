@@ -37,7 +37,10 @@ namespace Laurence
                  }
             }else if (king.phase2)
             {
-                animator.SetTrigger(patterns.IdleRoulet());   
+                if (Time.time >= idleTime + king.relaxtime)
+                {
+                    animator.SetTrigger(patterns.IdleRoulet());
+                }
             }
            
         }

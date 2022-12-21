@@ -532,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858216028}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: restpoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,10 +560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8351535550346096790, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8351535550346096791, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -613,14 +609,6 @@ PrefabInstance:
       value: king
       objectReference: {fileID: 0}
     - target: {fileID: 8351535550346096794, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
-      propertyPath: enemyData
-      value: 
-      objectReference: {fileID: 11400000, guid: ec2587572ab906b448ebcf856b02d5f5, type: 2}
-    - target: {fileID: 8351535550346096794, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
-      propertyPath: restpoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351535550346096794, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
       propertyPath: restpoints.Array.data[0]
       value: 
       objectReference: {fileID: 1349884617}
@@ -628,10 +616,6 @@ PrefabInstance:
       propertyPath: restpoints.Array.data[1]
       value: 
       objectReference: {fileID: 858216028}
-    - target: {fileID: 8351535550346096795, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
-      propertyPath: enemyData
-      value: 
-      objectReference: {fileID: 11400000, guid: ec2587572ab906b448ebcf856b02d5f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
 --- !u!1 &1152161321
@@ -694,7 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349884617}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: restpoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1593,23 +1577,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1700580686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8351535550346096792, guid: 90543ab9703749f4fb745ef0c4039324, type: 3}
-  m_PrefabInstance: {fileID: 1029956461}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1700580695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700580686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd73914f6c255c44bb7ada47ee8ce067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3076152765157696513
 PrefabInstance:
   m_ObjectHideFlags: 0

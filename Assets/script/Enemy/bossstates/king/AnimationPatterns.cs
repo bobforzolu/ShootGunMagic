@@ -20,6 +20,8 @@ namespace Laurence
         private string IdlePreviousepattern;
         private string walkPreviousepattern;
         private string teleportPreviousepattern1 = "", teleportPreviousepattern2 = "";
+        private string SmashPreviousepattern ="";
+
 
 
 
@@ -82,7 +84,7 @@ namespace Laurence
             }
             else
             {
-                int index = Random.Range(0, idleroutes.Length );
+                int index = Random.Range(0, walkStrings.Length );
                 walkPreviousepattern = walkStrings[index];
                 return walkStrings[index];
             }
@@ -90,15 +92,32 @@ namespace Laurence
         public string teleportRoulet()
         {
           
-            int index = Random.Range(0, idleroutes.Length );
+            int index = Random.Range(0, teleportStrings.Length-1 );
+            Debug.Log(teleport.Length);
             teleportPreviousepattern1 = walkStrings[index];
             return teleportStrings[index];
             
 
         }
-        public void SmashRoulet()
+        public string SmashRoulet()
         {
+            if (SmashPreviousepattern.Equals(idle))
+            {
+                SmashPreviousepattern = attak1;
+                return attak1;
+            }
+            else if (SmashPreviousepattern.Equals(attak1))
+            {
+                SmashPreviousepattern = idle;
 
+                return idle;
+            }
+            else
+            {
+                int index = Random.Range(0, smashStrings.Length);
+                SmashPreviousepattern = walkStrings[index];
+                return walkStrings[index];
+            }
         }
 
         

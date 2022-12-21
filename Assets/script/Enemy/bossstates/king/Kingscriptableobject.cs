@@ -31,6 +31,7 @@ namespace Laurence
         public float hit1movespeed;
         public float hit2movespeed;
 
+
         [Header("teloprt points data")]
         public int restpoint;
         public Vector2[] restlocation;
@@ -40,6 +41,8 @@ namespace Laurence
         public bool phase1;
         public bool phase2;
 
+        public float phase2attkspeed;
+        public float phase1attkspeed;
        
         
         public event Action OnTeleport;

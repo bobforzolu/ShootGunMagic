@@ -44,6 +44,10 @@ namespace Laurence
         }
         public void TeleportLocation()
         {
+
+            if (king.Energy >= king.MaxEnergy)
+                Rb2d.transform.position = king.restlocation[0];
+            else
                 Rb2d.transform.position = king.Playerpos;
             /**if(i == 0)
             {
