@@ -11,11 +11,13 @@ namespace Laurence
     {
         [Header("Speed")]
         public int speed;
-
+        public float walkTime;
+        public float idleTime;
 
 
         public bool canflip;
 
         public float distanceToTarger;
+        public float attackRange;
     }
 }
