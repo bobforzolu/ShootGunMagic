@@ -11,6 +11,10 @@ namespace Laurence
         {
             player.currentHealth -= Damage;
         }
+        public void recoverhealth(int health)
+        {
+            player.currentHealth += Mathf.Clamp(health, 0, player.Maxhealth);
+        }
 
         // Start is called before the first frame update
         void Start()

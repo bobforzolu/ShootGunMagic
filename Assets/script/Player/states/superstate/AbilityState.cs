@@ -5,6 +5,7 @@ using UnityEngine;
 public class AbilityState : State
 {
     protected bool isAbilityFinish;
+    public bool isGrounded;
 
     public AbilityState(PlayerController controller, Statemachine statemachine) : base(controller, statemachine)
     {
@@ -24,9 +25,15 @@ public class AbilityState : State
     public override void Update()
     {
         base.Update();
-        if (isAbilityFinish)
+        isGrounded = controller.core.collison_Sense.GroundCheck();
+        if (isAbilityFinish && isGrounded)
         {
             statemachine.CangeState(controller.idleState);
+        }
+        else if(isAbilityFinish && !isGrounded)
+        {
+            statemachine.CangeState(controller.airState);
+
         }
     }
 

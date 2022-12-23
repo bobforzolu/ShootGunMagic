@@ -14,8 +14,12 @@ public class PlayerController : MonoBehaviour
     public  AttackState AttackState { get; private set; }
     public IdleState idleState { get; private set; }
     public WalkingState WalkState { get; private set; }
-    public WeaponChangeState weaponChange { get; private set; }
+    public Dash dash { get; private set; }
+    public AirState airState { get; private set; }
+    public Jump jump{ get; private set; }
 
+    public WeaponChangeState weaponChange { get; private set; }
+    public PlayerInputEvent inputEvent; 
     public WepontController wepont;
     private Statemachine statemachine;
     public Animator animator;
@@ -31,6 +35,10 @@ public class PlayerController : MonoBehaviour
         AttackState = new AttackState(this, statemachine, wepont);
         weaponChange = new WeaponChangeState(this, statemachine);
         WalkState = new WalkingState(this, statemachine);
+        airState = new AirState(this, statemachine);
+        dash = new Dash(this, statemachine);
+        jump = new Jump(this, statemachine);
+
 
     }
     void Start()

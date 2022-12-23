@@ -7,8 +7,8 @@ namespace Laurence
     [CreateAssetMenu(menuName =" Lootevent",fileName ="loot / loot events / drop event")]
     public class LootEvent : ScriptableObject
     {
-        public event Action<Vector2> OnDropLoot;
-        public void DropLootTrigger( Vector2 pos)
+        public event Action<Transform> OnDropLoot;
+        public void DropLootTrigger( Transform pos)
         {
             OnDropLoot?.Invoke(pos);
         }

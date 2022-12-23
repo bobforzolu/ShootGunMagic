@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ec2587572ab906b448ebcf856b02d5f5, type: 2}
+  loot: {fileID: 11400000, guid: 1e926690ff959884aa93d17c0654be4a, type: 2}
 --- !u!61 &8351535550346096790
 BoxCollider2D:
   m_ObjectHideFlags: 0

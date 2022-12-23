@@ -13,14 +13,21 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   Maxhealth: 50
-  currentHealth: 6
+  currentHealth: 50
   movementvelocity: 7
   JumpForce: 10
-  GroundCheck_Radius: 0.4
+  GroundCheck_Radius: 0.34
   ground:
     serializedVersion: 2
     m_Bits: 64
   variablesJumpHeight: 0.4
-  FacingDirection: 1
+  FacingDirection: -1
   damage2: 7
   damage1: 5
+  fallMultipier: 2.5
+  dashCoolDown: 50
+  dashTime: 0.25
+  dashInteruptTime: 0.1
+  dashVelocity: 30
+  drag: 10
+  dashEndYMultiplier: 0.2

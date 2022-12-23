@@ -25,6 +25,8 @@ public class AttackState : AbilityState
     public override void Update()
     {
         base.Update();
+        if (!controller.inputEvent.GetInput)
+            isAbilityFinish = true;
         controller.core.movement.SetVelocityX(0);
         
     }

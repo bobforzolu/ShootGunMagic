@@ -28,6 +28,16 @@ namespace Laurence
         [Header("attack")]
         public int damage2 = 5;
         public int damage1 = 3;
+        [Header("jump gravity modifier")]
+        public float fallMultipier = 2.5f;
+
+        [Header("dash state")]
+        public float dashCoolDown = 50f;
+        public float dashTime = 0.25f;
+        public float dashInteruptTime = 0.1f;
+        public float dashVelocity = 30f;
+        public float drag = 10f;
+        public float dashEndYMultiplier = 0.2f;
 
     }
 }

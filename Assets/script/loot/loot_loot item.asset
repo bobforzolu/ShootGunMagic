@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd31e9890bd5a443be22356205c02ec, type: 3}
   m_Name: loot_loot item
   m_EditorClassIdentifier: 
-  Health: {fileID: 0}
-  dropChance: 0
+  Health: {fileID: 5341415563460438518, guid: d5bfbcce852ab234db56dcc7a31a0f67, type: 3}
+  dropChance: 50

@@ -10,6 +10,7 @@ namespace Laurence
         private Core core;
         public Kingscriptableobject king;
         public samuriSo samuri;
+        public int woldspeed;
         
         private void Start()
         {
@@ -32,6 +33,8 @@ namespace Laurence
         public void ResetSpeed()
         {
             core.movement.SetVelocityX(0);
+            core.movement.SetVelocityY(0);
+
         }
         public void CanDamage()
         {
@@ -41,6 +44,12 @@ namespace Laurence
         {
              core.attack.Damage(damage);
             
+        }
+        public void AddWolfAttack1F()
+        {
+            core.movement.SetVelocityX(core.movement.facingDirections * (woldspeed));
+            core.movement.SetVelocityY( woldspeed);
+
         }
         private void Teleport() => king.Teleporttrigger();
         

@@ -30,24 +30,46 @@ public class Grounded : State
     public override void Update()
     {
         base.Update();
-        isSwitchactiveammo = controller.input.ReasourceChange;
-        isAttack = controller.input.isAttack;
-        isSwithcActivewepon = controller.input.isSwitch;
-        Xinput = controller.input.normInputX;
-
+        isGrounded = controller.core.collison_Sense.GroundCheck();
+        if (controller.inputEvent.GetInput)
+        {
+            isSwitchactiveammo = controller.input.ReasourceChange;
+            isAttack = controller.input.isAttack;
+            isSwithcActivewepon = controller.input.isSwitch;
+            Xinput = controller.input.normInputX;
+            jump = controller.input.JumpInput;
+            isDash = controller.input.DashInput;
+        }
+        else
+        {
+            Xinput = 0;
+            isAttack = false;
+            
+           
+        }
+        if (!isGrounded)
+                {
+                    statemachine.CangeState(controller.airState);
+                }
 
         if (isAttack)
         {
             controller.input.OnAttackPressed();
             statemachine.CangeState(controller.AttackState);
-        }else if (isSwithcActivewepon)
+        } else if (jump) {
+            controller.input.Jump_Is_Pressed();
+            statemachine.CangeState(controller.jump);
+            
+
+        }
+        else if (isSwithcActivewepon)
         {
             statemachine.CangeState(controller.weaponChange);
 
-        }else if (isSwitchactiveammo)
+        } else if (isSwitchactiveammo)
         {
             controller.input.OnRessorcePressed();
             controller.guneventHandler.AmmoSwitchTriggerRight();
-        }
+        } 
     }
 }

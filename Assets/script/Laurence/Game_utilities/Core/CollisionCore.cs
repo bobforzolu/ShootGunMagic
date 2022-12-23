@@ -29,6 +29,13 @@ namespace Laurence.Game_utilities.Core
             
             return Physics2D.OverlapCircle(GroudCheckPosition.position, playerData.GroundCheck_Radius, playerData.ground);
         }
-       
+        private void OnDrawGizmos()
+        {
+            if(GroudCheckPosition != null)
+            {
+                Gizmos.DrawWireSphere(GroudCheckPosition.position, playerData.GroundCheck_Radius);
+            }
+        }
+
     }
 }

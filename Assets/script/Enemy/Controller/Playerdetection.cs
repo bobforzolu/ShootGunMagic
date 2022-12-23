@@ -12,19 +12,18 @@ namespace Laurence
 
         public delegate GameObject findMyPlayer(GameObject player);
         public findMyPlayer foundplayer;
-        public void attackRange()
+        public bool attackRange()
         {
          Collider2D j =Physics2D.OverlapCircle(transform.position, attackZone, playerlayer);
          
             if (j != null)
             {
-
-                OnPlayerFound?.Invoke(true);
+                return true;
                  Debug.Log("gay");
             }
             else
             {
-                OnPlayerFound?.Invoke(false);
+                return false;
                 Debug.Log("fag");
             }
 

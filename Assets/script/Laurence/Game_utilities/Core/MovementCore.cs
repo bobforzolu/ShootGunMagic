@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Laurence.Game_utilities.Core
 {
@@ -21,6 +22,14 @@ namespace Laurence.Game_utilities.Core
         public void LogicUpdate()
         {
             CurrentVelocity = RB.velocity;
+
+        }
+        public void FasterLanding(PlayerController playerController)
+        {
+
+            workplace = RB.velocity += Vector2.up * Physics2D.gravity.y * (playerController.PlayerStats.fallMultipier - 1) * Time.deltaTime;
+            RB.velocity = workplace;
+            CurrentVelocity = workplace;
 
         }
         public void SetVelocityX(float velocity)

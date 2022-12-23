@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
+
 namespace Laurence
 {
     public class EnemyController : MonoBehaviour
     {
         // Start is called before the first frame update
-        public Rigidbody2D rb;
         public Core core;
         public EnemyData data;
         public SpriteRenderer sprite;
@@ -27,20 +28,23 @@ namespace Laurence
 
         private void Awake()
         {
-            statemachine = new Statemachine();
-            patrol_State = new EnemyPatrol_state(data, statemachine, this );
-            patrol_Attack = new EnemyAttack_State(data, statemachine, this);
-            _Enemy_idle = new Enemy_Idle(data, statemachine, this);
 
-            transform.parent.GetComponentInParent<Playerdetection>().OnPlayerFound += PlayerEnterAttackRange;
+
+        }
+        private void OnEnable()
+        {
+           // statemachine.Intialize(patrol_State);
 
         }
 
         void Start()
         {
+            statemachine = new Statemachine();
+            patrol_State = new EnemyPatrol_state(data, statemachine, this );
+            patrol_Attack = new EnemyAttack_State(data, statemachine, this);
+            _Enemy_idle = new Enemy_Idle(data, statemachine, this);
             animator = GetComponentInChildren<Animator>();
             core = GetComponentInChildren<Core>();
-            rb = GetComponent<Rigidbody2D>();
             sprite = GetComponentInChildren<SpriteRenderer>();
             statemachine.Intialize(patrol_State);
         }
@@ -48,10 +52,12 @@ namespace Laurence
         // Update is called once per frame
         void Update()
         {
+            PlayerEnterAttackRange(transform.parent.GetComponentInParent<Playerdetection>().attackRange());
             statemachine.CurrentEnemy.Update();
         }
         private void FixedUpdate()
         {
+            core.LogicUpdate();
             statemachine.CurrentEnemy.FixedUpdate();
         }
 
@@ -74,5 +80,8 @@ namespace Laurence
               
         }
         public void Isattacking() => patrol_Attack.AnimationFinishTrigger();
+        
+        
+
     }
 }

@@ -1,3 +1,4 @@
+using Laurence.Game_utilities.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -45,6 +46,7 @@ namespace Laurence
         public override void Update()
         {
             base.Update();
+            controller.core.movement.SetVelocityX(0);
             if (!EnemyFound)
             {
                 controller.animator.SetBool("run", false);

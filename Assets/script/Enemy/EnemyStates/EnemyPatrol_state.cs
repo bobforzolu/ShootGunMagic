@@ -59,12 +59,16 @@ namespace Laurence
 
                 wp = controller.Playerlocation;
             }
-            if(Vector2.Distance(controller.transform.position, wp.position) <= data.Attackrange && EnemyFound)
+             if(Vector2.Distance(controller.transform.position, wp.position) <= data.Attackrange && EnemyFound)
             {
+                controller.core.movement.SetVelocityX(0);
+
                 statemachine.CangeState(controller.patrol_Attack);
             }
+
              if(Vector2.Distance(controller.transform.position, wp.position) < 0.21f)
             {
+                controller.core.movement.SetVelocityX(0);
 
                 controller.animator.SetBool("run", false);
                 controller.animator.SetBool("idle", true);
@@ -77,11 +81,10 @@ namespace Laurence
             }
             else
             {
+                controller.core.movement.SetVelocityX(data.speed * controller.core.movement.facingDirections);
 
                 controller.animator.SetBool("idle", false);
                 controller.animator.SetBool("run", true);
-                controller.rb.MovePosition (  Vector3.MoveTowards(controller.transform.position, wp.position, data.speed * Time.deltaTime));
-
                 controller.core.movement.CheckIfShouldFlip(playerfacingdir(controller.transform.position, wp.position),true);
 
 

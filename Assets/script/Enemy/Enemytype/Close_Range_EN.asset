@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Close_Range_EN
   m_EditorClassIdentifier: 
   health: 10
-  Attackrange: 1.5
-  speed: 15
-  attackSpeed: 2
+  maxhealth: 10
+  Attackrange: 2
+  speed: 7
+  attackSpeed: 3
   detectledge: 2
   detectwall: 2.23
   layerMask:

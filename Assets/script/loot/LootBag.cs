@@ -6,41 +6,35 @@ namespace Laurence
 {
     public class LootBag : MonoBehaviour
     {
-        public List<Loot> loot = new List<Loot>();
-        public LootEvent DropLot;
+        public Loot loot; 
         private void Start()
         {
-            DropLot.OnDropLoot += SummonLot ;
         }
 
         private Loot GetDropChance()
         {
 
             int randomNumber = Random.Range(1, 101);
-            List<Loot> possibleDrop = new List<Loot>();
 
-            foreach (Loot item in loot)
+           
+            if(randomNumber <= loot.dropChance)
             {
-                if(randomNumber <= item.dropChance)
-                {
-                    possibleDrop.Add(item);
-                   
-                }
-            }
-            if(possibleDrop.Count > 0)
-            {
-                Loot droppedItem = possibleDrop[0];
-                return droppedItem;
+                    return loot;
+                
             }
 
             return null;
 
         }
-        public void SummonLot(Vector2 position)
+        private void OnDestroy()
+        {
+
+        }
+        public void SummonLot(Transform position)
         {
             if(GetDropChance() != null)
             {
-                Instantiate(GetDropChance(), position, Quaternion.identity);
+                Instantiate(GetDropChance().Health, position.position, Quaternion.identity);
             }
         }
     }
