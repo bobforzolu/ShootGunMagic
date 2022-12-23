@@ -6,33 +6,58 @@ using UnityEngine;
 namespace Laurence
 {
     public class Paralex : MonoBehaviour
-    { // The speed at which the backgrounds move
-        private Transform camaera;
-        private Vector3 previousecamerapos;
-        public Vector2 parallexEffectMultiplier;
-        public float textureUnitSizeX;
-        private void Start()
+    {
+        public Transform[] backgrounds = new Transform[1];         // Array of all the backgrounds to be parallaxed.
+        private float[] parallaxScales;         // Proportion of the camera's movement to move the backgrounds by.
+        public float smoothing = 1f;            // How smooth the parallax effect will be.
+
+        private Transform cam;                  // Reference to the main camera's transform.
+        private Vector3 previousCamPos;         // The position of the camera in the previous frame.
+
+        // Called before Start().
+        void Awake()
         {
-            camaera = Camera.main.transform;
-            previousecamerapos = camaera.position;
-            Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-            Texture2D texture = sprite.texture;
-            textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
+            // Set up the reference shortcut.
+            backgrounds[0] = gameObject.transform;
+            cam = Camera.main.transform;
         }
-        private void LateUpdate()
+
+        // Use this for initialization
+        void Start()
         {
-            Vector3 deltaMovement = camaera.transform.position - previousecamerapos;
-            transform.position += new Vector3( deltaMovement.x * parallexEffectMultiplier.x, deltaMovement.y * parallexEffectMultiplier.y);
-            previousecamerapos = camaera.position;
+            // The previous frame had the current frame's camera position.
+            previousCamPos = cam.position;
 
-
-           if(Mathf.Abs( camaera.position.x - transform.position.x) >= textureUnitSizeX)
+            // Assigning corresponding parallaxScales.
+            parallaxScales = new float[backgrounds.Length];
+            for (int i = 0; i < backgrounds.Length; i++)
             {
-                float offsetPositionX = (camaera.position.x - transform.position.x) % textureUnitSizeX;
-                transform.position = new Vector2(camaera.position.x + offsetPositionX, transform.position.y);
+                parallaxScales[i] = backgrounds[i].position.z * -1;
             }
         }
 
+        // Update is called once per frame
+        void Update()
+        {
+            // For each background.
+            for (int i = 0; i < backgrounds.Length; i++)
+            {
+                // The parallax is the opposite of the camera movement because the previous frame multiplied by the scale.
+                float parallax = (previousCamPos.x - cam.position.x) * parallaxScales[i];
+
+                // Set a target x position which is the current position plus the parallax.
+                float backgroundTargetPosX = backgrounds[i].position.x + parallax;
+
+                // Create a target position which is the background's current position with it's target x position.
+                Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
+
+                // Lerp the background's position between itself and it's target position.
+                backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
+            }
+
+            // Set the previousCamPos to the camera's position at the end of the frame.
+            previousCamPos = cam.position;
+        }
     }
 }
 

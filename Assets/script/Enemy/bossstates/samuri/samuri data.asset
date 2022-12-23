@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c83bea5ecbc414b88cb3ceeae61ebe, type: 3}
   m_Name: samuri data
   m_EditorClassIdentifier: 
-  speed: 2
-  walkTime: 0
-  idleTime: 0
-  canflip: 0
-  distanceToTarger: 0
+  speed: 6
+  walkTime: 1
+  idleTime: 2
+  Energy: 0
+  MaxEnergy: 2
+  canflip: 1
+  distanceToTarger: 10.649621
+  attackRange: 6
+  attackTimer: 33.53644
+  attackcooldown: 2
+  canAttack: 1
+  attack1Range: 30

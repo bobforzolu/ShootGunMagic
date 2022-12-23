@@ -27,7 +27,7 @@ namespace Laurence
         private void UpdateAmmo()
         {
             index++;
-            if(index >= 3)
+            if(index >= 1)
             {
                 index = 0;
                 Debug.Log(currentAmmo);

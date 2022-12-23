@@ -41,8 +41,8 @@ namespace Laurence
         public bool phase1;
         public bool phase2;
 
-        public float phase2attkspeed;
-        public float phase1attkspeed;
+        public float phase2hit1movespeed;
+        public float phase1hit1movespeed;
        
         
         public event Action OnTeleport;

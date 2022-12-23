@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public GunEventHandler guneventHandler;
     public Core core;
     public PlayerData PlayerStats;
-
+    public AmmoType ammo;
     private void Awake()
     {
         
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        guneventHandler.OnRecoveryAmmo += ammo.RecoverAmmo; 
         statemachine.Intialize(idleState);
 
     }
@@ -53,6 +54,15 @@ public class PlayerController : MonoBehaviour
     public void AnimationActionTrigger()
     {
         statemachine.CurrentState.AnimationEventTrigger();
+    }
+    public void OnDestroy()
+    {
+        guneventHandler.OnRecoveryAmmo -= ammo.RecoverAmmo;
+
+    }
+    private void OnDisable()
+    {
+        
     }
 
 

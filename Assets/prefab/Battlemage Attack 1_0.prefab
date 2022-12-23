@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 3076152765935508660}
   - component: {fileID: 3076152765935508661}
   - component: {fileID: 1082303912}
+  - component: {fileID: 1755336391}
   m_Layer: 3
   m_Name: Battlemage Attack 1_0
   m_TagString: Player
@@ -367,6 +368,7 @@ MonoBehaviour:
   guneventHandler: {fileID: 11400000, guid: 12d7848e69dbc0844bbb28e6cda36b4d, type: 2}
   core: {fileID: 1399239868}
   PlayerStats: {fileID: 11400000, guid: 5b6eca164ee3f0d458791db5fa7c6655, type: 2}
+  ammo: {fileID: 11400000, guid: d2acfc369d4b93a4e8545019c630be29, type: 2}
 --- !u!114 &3076152765935508657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Currentweapon: {fileID: 3076152764596575658}
+  uiwepon: {fileID: 11400000, guid: 5091313c088b60e4ab1078860112116b, type: 2}
   weaponList:
   - {fileID: 3076152763978048715}
   - {fileID: 3076152764596575658}
@@ -445,11 +448,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blasterEvent: {fileID: 11400000, guid: 12d7848e69dbc0844bbb28e6cda36b4d, type: 2}
   ammoTypes:
-  - {fileID: 11400000, guid: c76ae7723e34a1f4ba86544594b42142, type: 2}
-  - {fileID: 11400000, guid: 334eb327193126847848c3b9043c4089, type: 2}
   - {fileID: 11400000, guid: d2acfc369d4b93a4e8545019c630be29, type: 2}
   FirePoint: {fileID: 1559776613}
   index: 0
+--- !u!114 &1755336391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3076152765935508653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2768bc1932206254cba0a5ca4393ed86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 5b6eca164ee3f0d458791db5fa7c6655, type: 2}
 --- !u!1001 &2302871609365386856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,6 +471,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3076152765935508654}
     m_Modifications:
+    - target: {fileID: 2302871609302688956, guid: b2b5682f6b32acd42b2cb72394cd335d, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 11400000, guid: 12d7848e69dbc0844bbb28e6cda36b4d, type: 2}
     - target: {fileID: 2302871610663166674, guid: b2b5682f6b32acd42b2cb72394cd335d, type: 3}
       propertyPath: m_Name
       value: core

@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3ee436b2cc73f4c8117e82f0c4a96f, type: 3}
   m_Name: Shootgun
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 1759512896909567000, guid: 139815c4c211e4848b48a2d7ca03d5bc, type: 3}
+  ammoType: {fileID: 1759512896909567000, guid: 139815c4c211e4848b48a2d7ca03d5bc, type: 3}
   AmmoHitEffect: {fileID: 3341444295710385263, guid: 659afae18c1033e4eb127e5d155962f8, type: 3}
-  ammoAmount: 0
+  ammoAmount: 3
+  MaxAmmo: 3
   speed: 0
-  Damage: 10
+  Damage: 8
+  ammoRecovery: 0.5
+  gun: {fileID: 11400000, guid: 12d7848e69dbc0844bbb28e6cda36b4d, type: 2}

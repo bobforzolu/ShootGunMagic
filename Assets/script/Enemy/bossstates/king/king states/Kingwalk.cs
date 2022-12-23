@@ -27,8 +27,7 @@ namespace Laurence
             {
                 if(king.distanceToTarger > king.range)
                 {
-                    core.movement.RB.MovePosition(Vector2.MoveTowards(new Vector3(animator.transform.position.x, animator.transform.position.y), king.Playerpos , king.speed * Time.deltaTime));
-
+                    core.movement.SetVelocityX(core.movement.facingDirections * king.speed);
                 }else if(king.distanceToTarger <= king.range && king.Energy <= 5)
                 {
                     animator.SetTrigger("attack1");
@@ -57,6 +56,8 @@ namespace Laurence
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.ResetTrigger("walk");
+            core.movement.SetVelocityX(0);
+
             king.CanFlip = false;
 
         }

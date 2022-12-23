@@ -9,6 +9,7 @@ namespace Laurence
     {
         private Core core;
         public Kingscriptableobject king;
+        public samuriSo samuri;
         
         private void Start()
         {
@@ -17,11 +18,29 @@ namespace Laurence
         }
         public void AddforceAttack1()
         {
-            core.movement.RB.AddForce(Vector2.right * core.movement.facingDirections * king.hit1movespeed, ForceMode2D.Impulse);
+            core.movement.SetVelocityX(core.movement.facingDirections * king.hit1movespeed);
         }
         public void AddforceAttack2()
         {
-            core.movement.RB.AddForce(Vector2.right * core.movement.facingDirections * king.hit2movespeed, ForceMode2D.Impulse);
+            core.movement.SetVelocityX(core.movement.facingDirections * king.hit2movespeed);
+        }
+      
+        public void AddSamuriAttack1F()
+        {
+            core.movement.SetVelocityX(core.movement.facingDirections * samuri.attack1Range);
+        }
+        public void ResetSpeed()
+        {
+            core.movement.SetVelocityX(0);
+        }
+        public void CanDamage()
+        {
+            core.attack.CanDamage(true);
+        }
+        public void DamageEnemy(int damage)
+        {
+             core.attack.Damage(damage);
+            
         }
         private void Teleport() => king.Teleporttrigger();
         

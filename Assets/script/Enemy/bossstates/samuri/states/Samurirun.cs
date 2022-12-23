@@ -19,23 +19,34 @@ namespace Laurence
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+                samuri.canflip = true;
             if (Time.time >= runTimer + samuri.walkTime)
             {
-                core.movement.SetVelocityX(samuri.speed);
-                if(samuri.distanceToTarger <= samuri.attackRange)
-                {
-                 animator.SetTrigger("attack1");
+                animator.SetTrigger("idle");
 
-                }
             }
-            else
+            if(samuri.distanceToTarger >= samuri.attackRange)
             {
-                animator.SetTrigger("walk");
+                core.movement.SetVelocityX(samuri.speed * core.movement.facingDirections) ;
+
             }
+
+
+
+             if (samuri.distanceToTarger <= samuri.attackRange && samuri.Energy <= samuri.MaxEnergy)
+            {
+                animator.SetTrigger("attack1");
+
+            }
+           
+            
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            core.movement.SetVelocityX(0);
+            samuri.canflip = false;
+
 
         }
     }

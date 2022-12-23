@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Laurence;
 
 public class WepontController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class WepontController : MonoBehaviour
     public event Action OnAction;
     public event Action Onexit;
     public event Action OnWeponChange;
-
+    public WeponUiEvent uiwepon;
     public Weapon[] weaponList;
     public int Weapondirectory = 1;
 
@@ -44,8 +45,8 @@ public class WepontController : MonoBehaviour
 
       
         Currentweapon = weaponList[Weapondirectory];
-
         Weapondirectory++;
+        uiwepon.WeponchangeTrigger(Weapondirectory);
         if(Weapondirectory >= weaponList.Length)
         {
             Weapondirectory = 0;

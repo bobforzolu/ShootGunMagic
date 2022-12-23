@@ -1,34 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace Laurence
 {
     public class Healthbar : MonoBehaviour
     {
 
-        public ProgressBar health;
-        public UIDocument playerui;
-        public int currentHealth;
+        public Slider uiHealth;
+        public PlayerData data;
 
         private void Start()
         {
-            UpdateHealth();
+            SetHealth();
         }
+       
 
-        private void UpdateHealth()
-        {
-            var root = playerui.rootVisualElement;
-            health = root.Q<ProgressBar>("health");
-            health.value = currentHealth;
-        }
+        
 
         private void Update()
         {
-            UpdateHealth();
+            uiHealth.value = data.currentHealth;
         }
-
+        public void SetHealth()
+        {
+            uiHealth.maxValue = data.Maxhealth;
+            data.currentHealth = data.Maxhealth;
+            uiHealth.value = uiHealth.maxValue;
+        }
 
     }
 }

@@ -15,19 +15,26 @@ namespace Laurence
         {
             core = animator.GetComponentInChildren<Core>();
             idleTimer = Time.time;
+            if(samuri.Energy >= samuri.MaxEnergy)
+            {
+                samuri.Energy = 0;
+            }
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            samuri.canflip = true;
             if(Time.time >= idleTimer + samuri.idleTime)
             {
-                animator.SetTrigger("walk");
+                animator.SetTrigger("move");
             }
+            
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            
+            samuri.canflip = false;
+
         }
 
     }

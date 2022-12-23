@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eed36126e7f0947b5b40abdb0f2c65, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Maxhealth: 25
-  currentHealth: 0
+  Maxhealth: 50
+  currentHealth: 6
   movementvelocity: 7
   JumpForce: 10
   GroundCheck_Radius: 0.4
@@ -22,5 +22,5 @@ MonoBehaviour:
     m_Bits: 64
   variablesJumpHeight: 0.4
   FacingDirection: 1
-  damage2: 4
-  damage1: 2
+  damage2: 7
+  damage1: 5

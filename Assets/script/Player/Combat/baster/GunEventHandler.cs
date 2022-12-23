@@ -9,31 +9,36 @@ namespace Laurence.script
     [CreateAssetMenu(fileName ="blasterEventHandler",menuName = "Events/blaster event Handler")]
     public class GunEventHandler : ScriptableObject
     {
-        public Action onAmmoSwithchLeft;
+        public event Action OnRecoveryAmmo;
+        public void RecoveryHitTrigger()
+        {
+            OnRecoveryAmmo?.Invoke();
+        }
+        public event Action onAmmoSwithchLeft;
         public void AmmoSwitchTriggerLeft()
         {
             onAmmoSwithchLeft?.Invoke();
         }
 
-        public Action onAmmoSwithchRight;
+        public event Action onAmmoSwithchRight;
         public void AmmoSwitchTriggerRight()
         {
             onAmmoSwithchRight?.Invoke();
         }
 
-        public Action OnShootTrigger;
+        public event Action OnShootTrigger;
         public void ShootTrigger()
         {
             OnShootTrigger?.Invoke();
         }
 
-        public Action OnHitTrigger;
+        public event Action OnHitTrigger;
         public void HitTrigger()
         {
             OnShootTrigger?.Invoke();
         }
 
-        public Action<int> OnAmmoUiUpdate;
+        public event Action<int> OnAmmoUiUpdate;
         public void UiUpaadtetrigger(int index )
         {
             OnAmmoUiUpdate?.Invoke(index);

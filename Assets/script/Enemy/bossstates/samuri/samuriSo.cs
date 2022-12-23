@@ -13,11 +13,19 @@ namespace Laurence
         public int speed;
         public float walkTime;
         public float idleTime;
-
+        public int Energy;
+        public int MaxEnergy;
 
         public bool canflip;
 
         public float distanceToTarger;
         public float attackRange;
+
+        public float attackTimer;
+        public float attackcooldown;
+        public bool canAttack;
+
+
+        public float attack1Range;
     }
 }

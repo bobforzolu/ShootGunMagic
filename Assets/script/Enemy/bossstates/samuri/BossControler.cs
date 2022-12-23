@@ -16,6 +16,7 @@ namespace Laurence
         // Start is called before the first frame update
         void Start()
         {
+            core = GetComponentInChildren<Core>();
             _Player = GameObject.FindGameObjectWithTag("Player");
             samuripos = this.gameObject;
 
@@ -24,9 +25,10 @@ namespace Laurence
         // Update is called once per frame
         void Update()
         {
-
+            core.LogicUpdate();
             core.movement.CheckIfShouldFlip(playerPos(), samuri.canflip);
             samuri.distanceToTarger = Vector2.Distance(samuripos.transform.position, _Player.transform.position);
+            samuri.canAttack = CanAttack();
         }
         private int playerPos()
         {
@@ -38,6 +40,11 @@ namespace Laurence
             {
                 return -1;
             }
+        }
+        public bool CanAttack()
+        {
+
+            return Time.time > samuri.attackTimer + samuri.attackcooldown;
         }
     }
 }

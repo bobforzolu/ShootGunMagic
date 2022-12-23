@@ -30,5 +30,9 @@ namespace Laurence
             else
                  Destroy(transform.parent.gameObject, 0.1f);
         }
+        public void DamageFlash()
+        {
+
+        }
     }
 }
