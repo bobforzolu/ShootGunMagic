@@ -493,7 +493,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_KingIdle_strip_no_bkg_8: 666023003
+      spr_KingIdle_strip_no_bkg_17: -1736671644
       spr_KingIdle_strip_no_bkg_7: 355031012
       spr_KingIdle_strip_no_bkg_14: -768239501
       spr_KingIdle_strip_no_bkg_6: 1117113877
@@ -509,7 +509,7 @@ TextureImporter:
       spr_KingIdle_strip_no_bkg_1: -1767779766
       spr_KingIdle_strip_no_bkg_9: -1134960137
       spr_KingIdle_strip_no_bkg_15: -1979066151
-      spr_KingIdle_strip_no_bkg_17: -1736671644
+      spr_KingIdle_strip_no_bkg_8: 666023003
       spr_KingIdle_strip_no_bkg_12: 654279449
   spritePackingTag: 
   pSDRemoveMatte: 0

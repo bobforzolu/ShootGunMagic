@@ -28,6 +28,11 @@ namespace Laurence
 
         private void Awake()
         {
+            statemachine = new Statemachine();
+            patrol_State = new EnemyPatrol_state(data, statemachine, this );
+            patrol_Attack = new EnemyAttack_State(data, statemachine, this);
+            _Enemy_idle = new Enemy_Idle(data, statemachine, this);
+        
 
 
         }
@@ -38,11 +43,7 @@ namespace Laurence
         }
 
         void Start()
-        {
-            statemachine = new Statemachine();
-            patrol_State = new EnemyPatrol_state(data, statemachine, this );
-            patrol_Attack = new EnemyAttack_State(data, statemachine, this);
-            _Enemy_idle = new Enemy_Idle(data, statemachine, this);
+        { 
             animator = GetComponentInChildren<Animator>();
             core = GetComponentInChildren<Core>();
             sprite = GetComponentInChildren<SpriteRenderer>();

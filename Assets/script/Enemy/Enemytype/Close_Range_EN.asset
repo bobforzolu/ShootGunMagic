@@ -15,8 +15,8 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   Attackrange: 2
-  speed: 7
-  attackSpeed: 3
+  speed: 8
+  attackSpeed: 2.5
   detectledge: 2
   detectwall: 2.23
   layerMask:

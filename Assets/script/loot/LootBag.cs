@@ -22,8 +22,9 @@ namespace Laurence
                     return loot;
                 
             }
+            else
+                return null;
 
-            return null;
 
         }
         private void OnDestroy()

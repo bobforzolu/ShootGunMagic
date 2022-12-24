@@ -52,21 +52,26 @@ namespace Laurence
              }
             
             canFlip = true;
+            Transform wp;
 
-            Transform wp = controller.PatrolPoint[_CurrentWaypoint];
             if(EnemyFound)
             {
 
                 wp = controller.Playerlocation;
             }
-             if(Vector2.Distance(controller.transform.position, wp.position) <= data.Attackrange && EnemyFound)
+            else
+            {
+                 wp = controller.PatrolPoint[_CurrentWaypoint];
+
+            }
+            if (Vector2.Distance(controller.transform.position, wp.position) <= data.Attackrange && EnemyFound)
             {
                 controller.core.movement.SetVelocityX(0);
 
                 statemachine.CangeState(controller.patrol_Attack);
             }
 
-             if(Vector2.Distance(controller.transform.position, wp.position) < 0.21f)
+             if(Vector2.Distance(controller.transform.position, wp.position) < .5f)
             {
                 controller.core.movement.SetVelocityX(0);
 

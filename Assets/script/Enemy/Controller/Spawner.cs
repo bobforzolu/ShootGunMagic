@@ -44,20 +44,20 @@ namespace Laurence
         {
             for (int i = 0; i < _MaxSpawn; i++)
             {
-                GameObject enemy = Instantiate(enemylist[i], patrolPoint[i].position, Quaternion.identity);
                 if ( i == 0)
                 {
-                   enemy.GetComponent<EnemyController>().PatrolPoint[0] = SetPatrolPoint1();
+                   enemylist[i].GetComponent<EnemyController>().PatrolPoint[0] = SetPatrolPoint1();
 
-                    enemy.GetComponent<EnemyController>().PatrolPoint[1] = SetPatrolPoint2();
+                    enemylist[i].GetComponent<EnemyController>().PatrolPoint[1] = SetPatrolPoint2();
 
                 }
                 else if(i == 1)
                 {
-                    enemy.GetComponent<EnemyController>().PatrolPoint[0] = SetPatrolPoint2();
+                    enemylist[i].GetComponent<EnemyController>().PatrolPoint[0] = SetPatrolPoint2();
 
-                    enemy.GetComponent<EnemyController>().PatrolPoint[1] = SetPatrolPoint1();
+                    enemylist[i].GetComponent<EnemyController>().PatrolPoint[1] = SetPatrolPoint1();
                 }
+                GameObject enemy = Instantiate(enemylist[i], patrolPoint[i].position, Quaternion.identity);
                 enemy.GetComponent<EnemyController>().enabled = true;
                 enemy.transform.parent = this.transform;
 

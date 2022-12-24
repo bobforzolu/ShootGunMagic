@@ -22,23 +22,23 @@ namespace Laurence
             enemyData.health -= Damage;
             if (enemyData.health <= 0)
             {
+                DropLot(gameObject.transform);
                 OnDeath();
             }
         }
         public  void OnDeath()
         {
 
+            enemyData.health = enemyData.maxhealth;
             if (transform.parent == null)
             {
-             DropLot(gameObject.transform);
-            enemyData.health = enemyData.maxhealth;
                 gameObject.SetActive(false);
 
             }
             else
             {
-                enemyData.health = enemyData.maxhealth;
                 transform.parent.gameObject.SetActive(false);
+
 
             }
         }
