@@ -125,6 +125,8 @@ public class PlayerInputReaciver : MonoBehaviour
         isAttack = false;
     }
     public void UseDashInput() => DashInput = false;
+    public void UseSwitchInput() => isSwitch = false;
+
     public void Jump_Is_Pressed() => JumpInput = false;
 
 

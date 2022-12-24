@@ -21,7 +21,7 @@ namespace Laurence
            
             enemyData.health -= Damage;
             if (enemyData.health <= 0)
-            {
+            {   
                 DropLot(gameObject.transform);
                 OnDeath();
             }

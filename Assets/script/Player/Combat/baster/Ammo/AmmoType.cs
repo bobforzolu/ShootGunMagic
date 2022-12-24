@@ -32,7 +32,8 @@ namespace Laurence
 
         public void RecoverAmmo()
         {
-            ammoAmount += ammoRecovery;
+            if (ammoAmount < MaxAmmo)
+                ammoAmount += ammoRecovery;
         }
 
     }

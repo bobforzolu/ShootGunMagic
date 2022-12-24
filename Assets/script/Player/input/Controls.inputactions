@@ -67,7 +67,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "gamecontrols",
+                    "groups": "keyboard",
                     "action": "Change weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -79,6 +79,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "gamecontrols",
+                    "action": "Change weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f24d696-08ed-4032-bc7d-19511dd8c571",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
                     "action": "Change weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -101,6 +112,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "keyboard",
+                    "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9e2023c-a898-4539-8235-388d296a4788",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -332,6 +354,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "gamecontrols",
+                    "action": "dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b01daaae-6e0f-4c31-b96a-bf7e18ad251b",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
                     "action": "dash",
                     "isComposite": false,
                     "isPartOfComposite": false

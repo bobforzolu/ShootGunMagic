@@ -26,7 +26,7 @@ namespace Laurence
         void Update()
         {
             core.LogicUpdate();
-            core.movement.CheckIfShouldFlip(playerPos(), samuri.canflip);
+            flipboss();
             samuri.distanceToTarger = Vector2.Distance(samuripos.transform.position, _Player.transform.position);
             samuri.canAttack = CanAttack();
         }
@@ -40,6 +40,11 @@ namespace Laurence
             {
                 return -1;
             }
+        }
+        public void flipboss()
+        {
+            core.movement.CheckIfShouldFlip(playerPos(), samuri.canflip);
+
         }
         public bool CanAttack()
         {

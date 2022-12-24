@@ -9,7 +9,7 @@ namespace Laurence
         public PlayerData player;
         public void TakeDamage(int Damage)
         {
-            player.currentHealth -= Damage;
+            player.takeDamage(Damage);
         }
         public void recoverhealth(int health)
         {

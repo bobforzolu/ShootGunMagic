@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         guneventHandler.OnRecoveryAmmo -= ammo.RecoverAmmo;
 
     }
+ 
     private void OnDisable()
     {
         

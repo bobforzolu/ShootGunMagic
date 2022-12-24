@@ -39,6 +39,8 @@ public class AirState : State
         if (isDash && controller.dash.CheckIfCanDash())
         {
             controller.input.UseDashInput();
+            statemachine.CangeState(controller.dash);
+
         }
         else if (isGrounded)
         {
@@ -46,6 +48,7 @@ public class AirState : State
         }
         else
         {
+            controller.core.movement.CheckIfShouldFlip(Xinput, true);
             controller.core.movement.SetVelocityX(controller.PlayerStats.movementvelocity * 0.8f * Xinput);
         }
     }

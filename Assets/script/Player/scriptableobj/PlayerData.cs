@@ -39,5 +39,14 @@ namespace Laurence
         public float drag = 10f;
         public float dashEndYMultiplier = 0.2f;
 
+
+        public void takeDamage( int damage)
+        {
+            if(currentHealth > 0)
+            {
+                currentHealth -= damage;
+            }
+        }
+
     }
 }

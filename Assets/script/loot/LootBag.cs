@@ -37,6 +37,10 @@ namespace Laurence
             {
                 Instantiate(GetDropChance().Health, position.position, Quaternion.identity);
             }
+            else
+            {
+                return;
+            }
         }
     }
 }

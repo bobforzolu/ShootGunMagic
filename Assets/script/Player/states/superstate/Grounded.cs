@@ -64,12 +64,13 @@ public class Grounded : State
         }
         else if (isSwithcActivewepon)
         {
+            controller.input.UseSwitchInput();
             statemachine.CangeState(controller.weaponChange);
 
-        } else if (isSwitchactiveammo)
+        } else if (isDash && controller.dash.CheckIfCanDash())
         {
-            controller.input.OnRessorcePressed();
-            controller.guneventHandler.AmmoSwitchTriggerRight();
-        } 
+            controller.input.UseDashInput();
+            statemachine.CangeState(controller.dash);
+        }
     }
 }

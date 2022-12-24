@@ -8,6 +8,7 @@ namespace Laurence
     {
         public DialogueObject textjason;
         public DialogueEvent dialogue;
+        public Animator animator;
         [SerializeField]private int id;
         private void Start()
         {
@@ -31,6 +32,8 @@ namespace Laurence
         private void CloseEvent(int id)
         {
             if(id == this.id)
+                if(animator!= null)
+                    animator.enabled = true;
                 gameObject.SetActive(false);
         }
     }

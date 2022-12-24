@@ -71,6 +71,7 @@ namespace Laurence
             {
                 if (transform.parent.root.CompareTag("Player"))
                 {
+                    
                     gun.RecoveryHitTrigger();
                 }
                 DamageEnemy[i].TakeDamage(damage);
