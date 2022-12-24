@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1c01c7c70720f46bc34b20c1251b67, type: 3}
   m_Name: cangetInput
   m_EditorClassIdentifier: 
-  GetInput: 0
+  GetInput: 1
+  DialogueButton: 0
