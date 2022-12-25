@@ -12,6 +12,7 @@ namespace Laurence
 
         public musicmanager music;
         public samuriSo samuri;
+        public GameObject unlock;
         public Core core { get; private set; }
         // Start is called before the first frame update
         void Start()
@@ -49,6 +50,7 @@ namespace Laurence
         private void OnDisable()
         {
             music.playdefualt();
+            unlock.SetActive(false);
         }
         public bool CanAttack()
         {

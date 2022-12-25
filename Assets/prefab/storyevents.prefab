@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 6628829546478907579}
   - component: {fileID: 3129695034231465311}
   m_Layer: 0
-  m_Name: postfightTimline
+  m_Name: beforefinalevent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,6 +616,16 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 5645813704648066257, guid: 7561c1443d0440445a63ae94c9f8fda7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5533633722903937862, guid: 7561c1443d0440445a63ae94c9f8fda7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2102509419972866392, guid: 7561c1443d0440445a63ae94c9f8fda7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7194972168298403386, guid: 7561c1443d0440445a63ae94c9f8fda7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7055854133220917013, guid: 7561c1443d0440445a63ae94c9f8fda7, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []

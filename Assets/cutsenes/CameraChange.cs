@@ -19,9 +19,14 @@ namespace Laurence
                 
             }
         }
-        private void OnCollisionExit2D(Collision2D collision)
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            
+            if (collision.CompareTag("Player"))
+            {
+                maincam.Priority = 1;
+                bosscam.Priority = 0;
+
+            }
         }
     }
 }
