@@ -10,7 +10,7 @@ namespace Laurence
         private GameObject _Player;
         private GameObject samuripos;
 
-
+        public musicmanager music;
         public samuriSo samuri;
         public Core core { get; private set; }
         // Start is called before the first frame update
@@ -45,6 +45,10 @@ namespace Laurence
         {
             core.movement.CheckIfShouldFlip(playerPos(), samuri.canflip);
 
+        }
+        private void OnDisable()
+        {
+            music.playdefualt();
         }
         public bool CanAttack()
         {
